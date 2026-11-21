@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { GITHUB_REPO_URL } from "@/lib/demo";
+import { BrandLogo } from "./brand-logo";
 import styles from "./landing-navbar.module.css";
 
 export function LandingNavbar() {
@@ -20,13 +21,7 @@ export function LandingNavbar() {
     <div className={styles.topbarWrapper}>
       <header className={styles.topbar}>
         <Link href="/" className={styles.brandWrap} title="Lead Intelligence">
-          <div className={styles.brandLogo}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-          </div>
+          <BrandLogo size={26} />
           <span className={styles.brand}>Lead Intelligence</span>
         </Link>
 

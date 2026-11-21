@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../crm/crm.module.css";
 import { isDemoEnabled } from "@/lib/demo";
+import { BrandLogo } from "../brand-logo";
 import { login } from "./actions";
 
 export const metadata = {
@@ -31,24 +32,7 @@ export default async function LoginPage({
           <Link href="/" className={styles.muted} style={{ fontSize: 13 }}>
             ← Back to home
           </Link>
-          <span
-            style={{
-              width: 26,
-              height: 26,
-              borderRadius: 7,
-              background: "var(--text)",
-              color: "var(--bg)",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-          </span>
+          <BrandLogo size={28} />
         </div>
 
         <h1 className={styles.loginTitle}>Lead Intelligence</h1>

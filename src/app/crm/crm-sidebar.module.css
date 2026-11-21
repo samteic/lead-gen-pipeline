@@ -102,18 +102,6 @@
   letter-spacing: -0.025em;
 }
 
-.logoIcon {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: var(--text);
-  color: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 .crmBadge {
   font-family: var(--font-geist-mono), monospace;
   font-size: 10.5px;

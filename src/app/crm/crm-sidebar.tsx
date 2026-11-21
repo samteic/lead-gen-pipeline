@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./crm-sidebar.module.css";
 import type { CurrentUser } from "@/lib/auth";
+import { BrandLogo } from "../brand-logo";
 
 interface CrmSidebarProps {
   user: CurrentUser;
@@ -158,13 +159,7 @@ export function CrmSidebar({ user, onLogout }: CrmSidebarProps) {
       <div>
         <div className={styles.brandSection}>
           <Link href="/" className={styles.brandLink} title="Lead Intelligence Home">
-            <span className={styles.logoIcon}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
-            </span>
+            <BrandLogo size={24} />
             <span>Lead Intel</span>
           </Link>
           <span className={styles.crmBadge}>{user.isDemo ? "Demo" : "Admin"}</span>

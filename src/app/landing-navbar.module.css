@@ -35,18 +35,6 @@
   color: var(--text);
 }
 
-.brandLogo {
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  background: var(--text);
-  color: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 .brand {
   font-weight: 700;
   font-size: 14.5px;
