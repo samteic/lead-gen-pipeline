@@ -1,0 +1,50 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-build:
+    name: Typecheck, Test & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript Compilation Check
+        run: npm run typecheck
+
+      - name: Run Automated Unit Tests
+        run: npm test
+
+      - name: Next.js Production Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+          SUPABASE_URL: https://placeholder.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy_ci_service_role_key
+          SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummy_ci_anon_key
+          GEMINI_API_KEY: dummy_ci_gemini_key
+          RESEND_API_KEY: re_dummy_ci_resend_key
+          WEBHOOK_SECRET: dummy_ci_webhook_secret_key
+          API_SECRET_KEY: dummy_ci_api_secret_key_12345
+          CRON_SECRET: dummy_ci_cron_secret_key_12345
+          UNSUBSCRIBE_SECRET: dummy_ci_unsub_secret_key_at_least_32_chars_12345
+          APP_BASE_URL: https://lead-gen-pipeline.example.com
+          PRIVACY_NOTICE_URL: https://lead-gen-pipeline.example.com/privacy
+          SENDER_NAME: CI Automated Test
+          BUSINESS_NAME: CI Pipeline Corp
+          BUSINESS_ADDRESS: 123 CI Way, San Francisco, CA 94105

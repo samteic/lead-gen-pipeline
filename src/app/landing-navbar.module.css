@@ -1,0 +1,190 @@
+/* Minimal Editorial Top Navbar */
+
+.topbarWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--nav-bg, rgba(250, 249, 246, 0.86));
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 60px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    padding: 0 16px;
+    height: 54px;
+  }
+}
+
+.brandWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brandLogo {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--text);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 680px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  color: var(--text);
+}
+
+.buttonPrimary {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.buttonPrimary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (min-width: 680px) {
+  .mobileActions {
+    display: none;
+  }
+}
+
+.mobileDemoBtn {
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.mobileToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s ease;
+}
+
+.mobileToggleBtn:hover {
+  border-color: var(--text);
+}
+
+.mobileBackdrop {
+  position: fixed;
+  inset: 0;
+  top: 54px;
+  background: rgba(11, 12, 14, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 49;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  padding: 10px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 50;
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.mobileMenuItem:hover {
+  background: var(--bg-subtle);
+}
